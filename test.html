@@ -58,6 +58,14 @@
     
     var o = { [Symbol.toStringTag]: "MyObject" }
     console.log(o + "");
+    
     </script>
+    <Add>::= "+" | "-"
+    <Plus>::= "*" | "/"
+    <AddictiveExpression>::= <MultiplicativeExpression>|<MultiplicativeExpression><Add>"("<AddictiveExpression>")"
+    <MultiplicativeExpression>::= <Number>|<MultiplicativeExpression><Plus>"("<AddictiveExpression>")"
+    乘法表达式=数字|乘法表达式乘以加法表达式|乘法表达式除以加法表达式
+    加法表达式=乘法表达式|加法表达式加上乘法表达式|加法表达式减去乘法表达式
+    乘法表达式=（数字加上乘法表达式）乘以加法表达式|
 </body>
 </html>
